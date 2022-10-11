@@ -25,7 +25,7 @@ public class AppSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-                .authorizeRequests().antMatchers("/auth/login", "/auth/refreshToken").permitAll()
+                .authorizeRequests().antMatchers("/auth/login", "/auth/refresh").permitAll()
                 .anyRequest().authenticated();
         return http.build();
     }

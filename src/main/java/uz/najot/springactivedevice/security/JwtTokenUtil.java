@@ -21,7 +21,7 @@ public class JwtTokenUtil {
                 .setSubject(username)
                 .setId(deviceId.toString())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60*60))
+                .setExpiration(new Date(System.currentTimeMillis()+1000*30))
                 .signWith(SignatureAlgorithm.HS256,secret).compact();
     }
 
